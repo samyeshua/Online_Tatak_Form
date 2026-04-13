@@ -21,7 +21,7 @@
             <div class="profile-widget">
                 <img src="officer-avatar.jpg" alt="" class="widget-avatar">
                 <div class="widget-info">
-                    <p class="officer-name">Barda</p>
+                    <p class="officer-name">Andrea Lim</p>
                     <p class="officer-role">SSG - President Officer</p>
                 </div>
             </div>
@@ -29,29 +29,22 @@
             <nav class="navigation">
                 <p class="nav-label">NAVIGATION</p>
                 <ul>
-                    <li class="nav-item active">
-                        <i class="fas fa-th-large"></i> Overview
-                    </li>
-                    <li class="nav-item">
-                        <i class="fas fa-calendar-alt"></i> Events
-                    </li>
-                    <li class="nav-item">
-                        <i class="fas fa-users-viewfinder"></i> Attendance
-                    </li>
-                    <li class="nav-item">
-                        <i class="fas fa-chart-line"></i> Reports
+                    <li class="nav-item active" id="nav-overview"><i class="fas fa-th-large"></i> Overview</li>
+                    <li class="nav-item" id="nav-events"><i class="fas fa-calendar-check"></i> Events</li>
+                    <li class="nav-item" id="nav-attendance"><i class="fas fa-users"></i> Attendance</li>
+                    <li class="nav-item" id="nav-reports"><i class="fas fa-chart-bar"></i> Reports</li>
+                    <li class="nav-item logout-item" id="sidebarLogout" role="button">
+                        <i class="fas fa-sign-out-alt"></i> Logout
                     </li>
                 </ul>
-                <div class="nav-logout" id="logoutTrigger">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </div>
             </nav>
         </aside>
 
         <main class="main-content">
+            
             <header class="top-bar">
                 <div class="welcome-text">
-                    <h1>Hello, Officer</h1>
+                    <h1 id="dynamic-title">Hello, Officer</h1>
                     <p>Friday, March 9, 2026 • 2nd Semester A.Y. 2025–2026</p>
                 </div>
                 <div class="top-icons">
@@ -61,79 +54,280 @@
                 </div>
             </header>
 
-            <section class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-number">18</span>
-                    <span class="stat-label">Total Events Handled</span>
+            <section id="section-overview">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">18</span>
+                        <span class="stat-label">Total Events Handled</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">1157</span>
+                        <span class="stat-label">Students Confirmed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Reports Generated</span>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">1157</span>
-                    <span class="stat-label">Students Confirmed</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">Reports Generated</span>
-                </div>
-            </section>
 
-            <section class="live-attendance-hero">
-                <div class="hero-header">
-                    <span class="live-indicator"><i class="fas fa-circle"></i> Live Attendance <span>Live</span></span>
-                    <h2>Cultural Night 2026</h2>
-                    <p>Mar 9 • Covered Court • SSG</p>
-                </div>
-                <div class="attendance-progress">
-                    <div class="progress-info">
-                        <span class="count">247</span><span class="total">/400</span>
-                    </div>
-                    <div class="hero-progress-bar">
-                        <div class="hero-progress-fill" style="width: 61.75%;"></div>
-                    </div>
-                    <p class="progress-status">86.75% confirmed • Just now</p>
-                </div>
-                <div class="hero-actions">
-                    <button class="btn-time"><i class="far fa-clock"></i> Time Limit</button>
-                    <button class="btn-close-event"><i class="fas fa-times"></i> Close</button>
-                </div>
-            </section>
-
-            <div class="lists-grid">
-                <section class="data-list-card">
-                    <div class="list-header">
-                        <h3>My Events</h3>
-                        <a href="#" class="view-all">View all <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-details">
-                            <h4>Cultural Night 2026</h4>
-                            <p>CAS • Covered Court • Mar 9, 6PM</p>
+                <div class="live-hero-card">
+                    <div class="live-status-header">
+                        <div class="live-indicator">
+                            <span class="dot"></span> Live Attendance <span class="live-tag">Live</span>
                         </div>
-                        <div class="event-status">
+                    </div>
+                    <h2 class="hero-title">Cultural Night 2026</h2>
+                    <p class="hero-subtitle">Mar 9 • Covered Court • SSG</p>
+                    <div class="hero-stats">
+                        <span class="current-count">247</span><span class="total-count">/400</span>
+                    </div>
+                    <div class="hero-progress-wrapper">
+                        <div class="hero-progress-bar">
+                            <div class="hero-progress-fill" style="width: 86.75%;"></div>
+                        </div>
+                        <p class="hero-progress-meta">86.75% confirmed • Just now</p>
+                    </div>
+                    <div class="hero-btn-group">
+                        <button class="btn-time-limit"><i class="far fa-clock"></i> Time Limit</button>
+                        <button class="btn-close-live"><i class="fas fa-times"></i> Close</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-lists">
+                    <div class="list-container">
+                        <div class="list-header">
+                            <h3>My Events</h3>
+                            <a href="#" class="view-all-link">View all <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="event-item-row">
+                            <div class="event-info">
+                                <h4>Cultural Night 2026</h4>
+                                <p>CAS • Covered Court • Mar 9, 6PM</p>
+                                <div class="mini-progress-bg">
+                                    <div class="mini-progress-fill" style="width: 86%;"></div>
+                                </div>
+                                <span class="mini-text">347 / 400</span>
+                            </div>
+                            <div class="event-badges">
+                                <span class="badge badge-open">Open</span>
+                                <span class="badge badge-closed">Close</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-container">
+                        <div class="list-header">
+                            <h3>Recent Check-ins</h3>
+                            <a href="#" class="view-all-link">View all <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="checkin-user-row">
+                            <div class="user-profile">
+                                <img src="avatar.jpg" alt="Ana" class="avatar-small">
+                                <div class="user-text">
+                                    <h4>Ana Corpuz</h4>
+                                    <p>UC-2024-0012 • BSIT 3-A</p>
+                                </div>
+                            </div>
+                            <div class="user-actions">
+                                <span class="status-ok">OK</span>
+                                <button class="btn-icon-edit"><i class="far fa-edit"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-events" style="display: none;">
+                <div class="manage-events-header">
+                    <div class="title-group">
+                        <h2>Manage Event</h2>
+                        <p>Create, edit, or configure attendance</p>
+                    </div>
+                    <button class="btn-create-event"><i class="fas fa-plus"></i> Create New Event</button>
+                </div>
+
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="card-top">
+                            <h3>Cultural Night 2026</h3>
                             <span class="badge badge-open">Open</span>
-                            <span class="badge badge-close">Close</span>
+                        </div>
+                        <p class="event-meta">CAS • COVERED COURT • MAR 9, 2026 • 6PM-11PM</p>
+                        <div class="progress-container">
+                            <div class="progress-bar"><div class="progress-fill" style="width: 86.75%;"></div></div>
+                            <p>347 / 400 confirmed • 86.75%</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-outline">Configure</button>
+                            <button class="btn-primary">Edit</button>
                         </div>
                     </div>
-                    </section>
+                    <div class="event-card">
+                        <div class="card-top">
+                            <h3>Leadership Summit</h3>
+                            <span class="badge badge-upcoming">Upcoming</span>
+                        </div>
+                        <p class="event-meta">SSG • AUDITORIUM • MAR 15, 2026 • 8AM</p>
+                        <div class="empty-state"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="section-attendance" style="display: none;">
+                <div class="search-container">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search students, ID..." id="studentSearch">
+                    </div>
+                </div>
 
-                <section class="data-list-card">
-                    <div class="list-header">
-                        <h3>Recent Check-ins</h3>
-                        <a href="#" class="view-all">View all <i class="fas fa-arrow-right"></i></a>
+                <div class="table-container">
+                    <table class="attendance-table">
+                        <thead>
+                            <tr>
+                                <th>STUDENTS</th>
+                                <th>ID NUMBER</th>
+                                <th>COURSE / YEAR</th>
+                                <th>STATUS</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <img src="avatar1.jpg" alt="" class="avatar-small">
+                                        <span>Ana Corpuz</span>
+                                    </div>
+                                </td>
+                                <td>UC-2024-0012</td>
+                                <td>BSIT 3-A</td>
+                                <td><span class="badge-status attended">Attended</span></td>
+                                <td><button class="btn-table-edit"><i class="far fa-edit"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-cell">
+                                        <img src="avatar2.jpg" alt="" class="avatar-small">
+                                        <span>Bryan Magtoto</span>
+                                    </div>
+                                </td>
+                                <td>UC-2024-0034</td>
+                                <td>BSCPE 2-B</td>
+                                <td><span class="badge-status attended">Attended</span></td>
+                                <td><button class="btn-table-edit"><i class="far fa-edit"></i></button></td>
+                            </tr>
+                            </tbody>
+                    </table>
+                    
+                    <div class="table-footer">
+                        <p>Showing 5 of 347 students</p>
                     </div>
-                    <div class="checkin-item">
-                        <img src="student1.jpg" alt="Student" class="student-thumb">
-                        <div class="student-info">
-                            <h4>Ana Corpuz</h4>
-                            <p>UC-2024-0012 • BSIT 3-A</p>
-                        </div>
-                        <div class="checkin-action">
-                            <span class="badge-ok">OK</span>
-                            <i class="far fa-edit edit-icon"></i>
+                </div>
+            </section>
+            <section id="section-reports" style="display: none;">
+                <div class="reports-header-actions">
+                    <button class="btn-generate-main"><i class="fas fa-file-download"></i> Generate Report</button>
+                </div>
+
+                <div class="reports-stats-grid">
+                    <div class="report-stat-card">
+                        <span class="report-badge badge-done">Done</span>
+                        <div class="report-stat-content">
+                            <span class="big-number">3</span>
+                            <span class="stat-desc">Reports Generated</span>
                         </div>
                     </div>
-                    </section>
-            </div>
+                    <div class="report-stat-card">
+                        <span class="report-badge badge-semester">This Semester</span>
+                        <div class="report-stat-content">
+                            <span class="big-number">18</span>
+                            <span class="stat-desc">Events Tracked</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="records-container">
+                    <h3 class="container-title">Record Reports</h3>
+                    
+                    <div class="record-item">
+                        <div class="record-details">
+                            <h4>Cultural Nights 2026</h4>
+                            <p>PDF • 347 students • Mar 9, 2026</p>
+                        </div>
+                        <button class="btn-generate-new">Generate New</button>
+                    </div>
+
+                    <div class="record-item">
+                        <div class="record-details">
+                            <h4>General Assembly</h4>
+                            <p>PDF • 298 students • Feb 15, 2026</p>
+                        </div>
+                        <button class="btn-download-record">Download</button>
+                    </div>
+                </div>
+            </section>
         </main>
+    </div>
+
+    <div id="attendanceModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content configure-modal">
+            <button class="close-modal-btn" id="closeAttendance"><i class="fas fa-times"></i></button>
+            <div class="modal-header-section">
+                <div class="modal-icon-box"><i class="fas fa-wave-square"></i></div>
+                <div class="modal-title-text">
+                    <h2>Open / Configure Attendance</h2>
+                    <p>Set window, time limit & verification method</p>
+                </div>
+            </div>
+            <form id="attendanceForm" class="attendance-form">
+                <div class="form-group">
+                    <label>SELECT EVENT</label>
+                    <div class="select-wrapper">
+                        <select name="event">
+                            <option>Leadership Summit - Mar 15</option>
+                            <option>Cultural Night - Mar 9</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>OPEN TIME</label>
+                        <div class="input-icon-wrapper">
+                            <input type="text" value="06:00 PM">
+                            <i class="far fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>CLOSE TIME</label>
+                        <div class="input-icon-wrapper">
+                            <input type="text" value="11:00 PM">
+                            <i class="far fa-clock"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>TIME LIMIT</label>
+                    <div class="select-wrapper">
+                        <select name="limit">
+                            <option>2 hours</option>
+                            <option>1 hour</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>VERIFICATION METHOD</label>
+                    <div class="select-wrapper">
+                        <select name="method">
+                            <option>QR Code Only</option>
+                            <option>Manual Input</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-open-now"><i class="fas fa-wave-square"></i> Open Now</button>
+                    <button type="button" class="btn-modal-cancel" id="cancelAttendance">Cancel</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <div id="logoutModal" class="modal-overlay" style="display: none;">
@@ -141,11 +335,11 @@
             <div class="logout-icon-container">
                 <i class="fas fa-sign-out-alt"></i>
             </div>
-            <h2>Confirm Logout</h2>
-            <p>You are about to sign out the <br><strong>UC Admin Access System</strong>.</p>
+            <h2>Signout?</h2>
+            <p>Are you sure you want to signout your <br><strong>UC Officer Access System</strong>.</p>
             <div class="confirm-modal-buttons">
-                <button id="stayLoggedIn" class="btn-cancel-modal">Stay Logged In</button>
-                <button id="confirmLogout" class="btn-confirm-logout">Yes, Logout</button>
+                <button id="stayLoggedIn" class="btn-cancel-modal">Cancel</button>
+                <button id="confirmLogout" class="btn-confirm-logout">Sign out</button>
             </div>
         </div>
     </div>

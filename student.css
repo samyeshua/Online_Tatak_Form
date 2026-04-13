@@ -1,14 +1,31 @@
 /* --- Global Styles --- */
 :root {
-    --sidebar-bg: #1a2238;
+    --sidebar-bg: #121c43; 
     --main-bg: #f4f7fe;
-    --accent-blue: #2d3e8b;
-    --text-dark: #1a2238;
-    --text-gray: #718096;
+    --primary-blue: #1d2b63;
+    --accent-blue: #4096ff;
+    --text-dark: #1b2559;
+    --text-gray: #7a829a;
     --white: #ffffff;
-    --success: #48bb78;
-    --danger: #e53e3e;
-    --border-color: #e2e8f0;
+    --success: #00b5ad; 
+    --border-color: #e0e5f2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-dark);
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
 }
 
 * {
@@ -28,7 +45,7 @@ body {
     min-height: 100vh;
 }
 
-/* --- Sidebar --- */
+
 .sidebar {
     width: 260px;
     background-color: var(--sidebar-bg);
@@ -84,38 +101,42 @@ body {
     padding: 25px;
     cursor: pointer;
     opacity: 0.7;
+    position: relative;
+    z-index: 10;       
+    display: flex;      
+    align-items: center;
+    gap: 15px;
 }
-
-/* --- Main Content --- */
+.nav-logout:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
 .main-content {
     flex: 1;
-    padding: 30px;
+    padding: 30px 40px;
 }
 
 .top-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 30px;
 }
 
-.welcome-text h1 { font-size: 28px; font-weight: 800; margin-bottom: 5px; }
-.welcome-text p { color: var(--text-gray); font-size: 14px; }
+.welcome-text h1 { font-size: 32px; font-weight: 700; color: var(--text-dark); }
+.welcome-text p { color: #707eae; font-size: 14px; margin-top: 4px; }
 
-.top-icons { display: flex; align-items: center; gap: 15px; }
+.top-icons { display: flex; align-items: center; gap: 12px; }
 .icon-circle {
-    width: 40px;
-    height: 40px;
+    width: 40px; height: 40px;
     background: var(--white);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-gray);
-    border: 1px solid var(--border-color);
+    display: flex; align-items: center; justify-content: center;
+    color: #707eae;
+    cursor: pointer;
 }
 
-.profile-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.profile-avatar { width: 40px; height: 40px; border-radius: 50%; }
 
 /* --- Action Banner --- */
 .action-banner {
@@ -419,4 +440,232 @@ body {
 .btn-confirm-logout:hover {
     background: #dc2626;
     transform: translateY(-1px);
+}
+/* Layout for the Active Events page cards */
+.active-events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px;
+}
+
+/* Specific styling for the red hint under the badge */
+.badge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.closes-hint {
+    color: #ff4d4f;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+/* Optional: Smooth transition when switching */
+.dashboard-section {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Sidebar update: Ensure the Upcoming nav item is clickable */
+#nav-upcoming { cursor: pointer; }
+
+/* 3-Column Grid for Upcoming Events */
+.upcoming-events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns as per image */
+    gap: 20px;
+}
+
+/* Badge for Upcoming (Blue/Purple tint) */
+.badge.upcoming {
+    background: #e0e7ff;
+    color: #4338ca;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+/* Specifics for Upcoming Cards */
+.event-date {
+    font-size: 13px;
+    color: #a3aed0;
+    margin: 10px 0 20px 0;
+}
+
+.divider {
+    height: 1px;
+    background-color: #f0f2f8;
+    margin-bottom: 15px;
+}
+
+.upcoming-footer {
+    justify-content: flex-end; /* Align text to the right as per image */
+}
+
+.open-time, .duration-text {
+    font-size: 12px;
+    color: #a3aed0;
+}
+/* History Section Specifics */
+.history-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.status-pills {
+    display: flex;
+    gap: 12px;
+}
+
+.pill {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.attended-pill { background: #e6f7f0; color: #00b365; }
+.absent-pill { background: #fff1f0; color: #ff4d4f; }
+.rate-pill { background: #e6f0ff; color: #1890ff; border: 1px solid #91d5ff; }
+
+.view-all {
+    text-decoration: none;
+    color: #1a237e;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* List Layout */
+.history-header {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 0.5fr;
+    padding: 15px 20px;
+    color: #a3aed0;
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid #f0f2f8;
+}
+
+.history-row {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 0.5fr;
+    padding: 15px 20px;
+    align-items: center;
+    border-bottom: 1px solid #f0f2f8;
+}
+
+.event-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.status-icon.success { background: #e6f7f0; color: #00b365; }
+.status-icon.danger { background: #fff1f0; color: #ff4d4f; }
+
+.event-name { font-weight: 700; color: #1b2559; }
+.event-dt { color: #1b2559; font-size: 14px; }
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.status-badge.attended { border-color: #00b365; color: #00b365; }
+.status-badge.absent { border-color: #ff4d4f; color: #ff4d4f; }
+.report-instruction {
+    color: #4a5568;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.stats-summary-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 40px;
+    margin-bottom: 25px;
+}
+
+.cert-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.cert-icon-box {
+    background: #fff5f5;
+    color: #e53e3e;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cert-icon-box span { font-size: 10px; }
+
+.cert-details { flex-grow: 1; }
+.cert-details h3 { font-size: 16px; margin-bottom: 4px; }
+.cert-details p { font-size: 13px; color: #718096; }
+
+.cert-meta { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+
+.badge-mini {
+    background: #e6f7f0;
+    color: #00b365;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.cert-id { font-size: 12px; color: #a0aec0; }
+
+.btn-download {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.modal {
+    display: none; /* JS will change this to flex */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
 }

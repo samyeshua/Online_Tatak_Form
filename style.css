@@ -236,11 +236,6 @@ h2 {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.role-card:hover {
-    background: rgba(255, 255, 255, 0.07);
-    transform: translateY(-10px);
-    border-color: var(--uc-blue-bright);
-}
 
 .role-icon {
     font-size: 2.5rem;
@@ -2222,4 +2217,452 @@ body {
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+}
+:root {
+    --uc-dark-blue: #12225b;
+    --uc-bright-blue: #2563eb;
+    --uc-yellow: #f59e0b;
+    --bg-light: #f8fafc;
+    --text-main: #ffffff;
+    --text-dark: #1e293b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--uc-dark-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    border-bottom: 2px solid var(--uc-bright-blue);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.logo img { height: 45px; margin-right: 12px; }
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+/* HERO SECTION */
+.hero {
+    background-color: var(--uc-dark-blue);
+    padding: 100px 8%;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Arvo', serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.highlight { color: var(--uc-yellow); }
+
+.hero p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* Background Seal Decoration */
+.hero-bg-logo {
+    position: absolute;
+    right: -5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background: url('uc-seal-watermark.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.1;
+}
+
+/* BUTTONS */
+button {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-yellow { background: var(--uc-yellow); color: #000; }
+.btn-blue { background: var(--uc-bright-blue); color: #fff; margin-right: 15px; }
+.btn-outline { 
+    background: transparent; 
+    border: 1px solid #475569; 
+    color: white; 
+}
+
+/* FEATURES SECTION */
+.features {
+    padding: 100px 8%;
+    background: var(--bg-light);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+}
+
+.badge {
+    background: #e2e8f0;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--uc-dark-blue);
+}
+
+.features h2 {
+    font-family: 'Arvo', serif;
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+.accent { color: var(--uc-bright-blue); }
+
+/* CARDS GRID */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.2rem;
+}
+
+.card p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blue-bg { background: #dbeafe; color: #2563eb; }
+.yellow-bg { background: #fef3c7; }
+.green-bg { background: #dcfce7; }
+.grey-bg { background: #f1f5f9; }
+/* STATS SECTION (Dark Blue Background) */
+.stats {
+    background: var(--uc-dark-blue);
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    color: white;
+}
+
+.badge-outline {
+    border: 1px solid var(--uc-yellow);
+    color: var(--uc-yellow);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.stats h2 { font-family: 'Arvo', serif; font-size: 2.5rem; margin: 20px 0; }
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-value { font-size: 2rem; font-weight: bold; margin-bottom: 5px; }
+
+/* HOW IT WORKS */
+.how-it-works {
+    padding: 100px 8%;
+    text-align: center;
+    background: #f1f5f9;
+}
+
+.section-header { margin-bottom: 50px; }
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.step-card {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.step-num {
+    background: var(--uc-dark-blue);
+    color: white;
+    width: 35px; height: 35px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.ui-mockup {
+    margin-top: 25px;
+    background: #eef2ff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #3730a3;
+    border-left: 4px solid var(--uc-bright-blue);
+}
+
+.ui-mockup.green { background: #dcfce7; color: #166534; border-color: #22c55e; }
+
+/* ACCESS ROLES */
+.roles {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.role-card {
+    background: var(--uc-dark-blue);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.role-icon {
+    width: 45px; height: 45px;
+    background: var(--uc-bright-blue);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+}
+
+.role-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.role-tags span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+.role-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.role-btn:hover { background: var(--uc-bright-blue); }
+.stats-section {
+    background-color: #1a2a6c; /* Deep UC Blue */
+    padding: 100px 10%;
+    color: #ffffff;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Header Text Styles */
+.pill-badge {
+    display: inline-block;
+    border: 1px solid #f59e0b;
+    color: #f59e0b;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.stats-header h2 {
+    font-family: 'Arvo', serif;
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.stats-header p {
+    color: #94a3b8;
+    max-width: 320px;
+    font-size: 1rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.08); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.stat-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+}
+
+/* Stat Typography */
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+/* Icon Colors (matching the image) */
+.blue { filter: invert(33%) sepia(91%) saturate(2251%) hue-rotate(212deg) brightness(101%) contrast(101%); }
+.green { filter: hue-rotate(90deg) brightness(1.2); }
+.purple { filter: hue-rotate(260deg) brightness(1.1); }
+
+
+/* Specific targeting for the "Built for" section */
+.roles-section {
+    background-color: #f8fafc; /* This is the semi-white background */
+    padding: 100px 10%;
+}
+
+h2.title-built {
+    font-family: 'Arvo', serif !important;
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+    color: #0D1637 !important; /* Deep Navy from your image */
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+/* This targets the "everyone" part specifically */
+h2.title-built span {
+    color: #2563EB !important; /* Vibrant Blue */
+}
+
+/* Adjust the description under "Built for" */
+.roles-section .description {
+    color: #64748b !important; /* Grey color for the subtext */
+    margin: 10px auto 50px auto;
+}
+/* Ensure "Ready to go" is pure white */
+.text-white {
+    color: #ffffff !important;
+}
+
+/* Ensure "paperless?" is the correct UC Gold */
+.text-gold {
+    color: #f59e0b !important;
+}
+
+/* Style the header font to match your screenshot (Arvo Slab) */
+.final-cta h2 {
+    font-family: 'Arvo', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Ensure the subtext is visible against the dark navy background */
+.final-cta p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
 }
