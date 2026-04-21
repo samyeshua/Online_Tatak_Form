@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +66,7 @@
                     <button type="submit" class="btn-signin">Sign In</button>
                     
                     <div class="form-footer-links">
-                        <a href="#" class="forgot-link">Forgot Password?</a>
+                        <a href="javascript:void(0)" class="forgot-link">Forgot Password?</a>
                     </div>
                 </form>
 
@@ -78,89 +77,26 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | UC Online Tatak Forms</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="login-split-page">
-
-    <div class="login-wrapper">
-        <div class="brand-hero">
-            <div class="brand-content">
-                <div class="brand-logo-row">
-                    <img src="655609284_1426759675272887_2726655014418430573_n.png" alt="UC Logo" class="main-logo">
-                    <div class="brand-text">
-                        <strong class="app-name">Online Tatak Forms</strong>
-                        <span class="univ-name">University of Cebu</span>
-                    </div>
-                </div>
-                <h1 class="hero-title">Streamline Your <br><span class="text-gold">Event Attendance</span> <br>in SAS</h1>
-                <p class="brand-subtext">Secure, real-time attendance tracking and no manual stamps needed.</p>
+    <div id="forgotPasswordModal" class="modal-overlay">
+        <div class="confirm-modal-content">
+            <div class="logout-icon-container" style="background: #eff6ff; color: #3b82f6;">
+                <i class="fas fa-key"></i>
             </div>
-        </div>
+            <h2>Reset Password</h2>
+            <p style="color: #64748b; font-size: 14px; margin-top: 8px;">
+                Enter your school ID number and we'll send you a reset link.
+            </p>
+            
+            <div style="margin-top: 20px; text-align: left;">
+                <input type="email" id="resetEmail" placeholder="id-number@university.edu" 
+                    style="width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 12px; outline: none;">
+            </div>
 
-        <div class="form-container">
-            <div class="white-login-card">
-                <body class="login-split-page">
-                <a href="index.html" class="back-to-landing">
-                    <i class="fas fa-arrow-left"></i> Back to Home
-                </a>
-                <div class="role-selector">
-                    <p class="label-small">SIGN IN AS</p>
-                    <div class="role-tabs" id="roleSelector">
-                        <button class="role-tab active" data-role="student">
-                            <i class="fas fa-user-graduate"></i> Student
-                        </button>
-                        <button class="role-tab" data-role="officer">
-                            <i class="fas fa-user-shield"></i> Officer
-                        </button>
-                        <button class="role-tab" data-role="admin">
-                            <i class="fas fa-user-lock"></i> Admin
-                        </button>
-                    </div>
-                </div>
-
-                <form class="actual-form" id="loginForm">
-                    <div class="input-field">
-                        <label id="usernameLabel">Username</label>
-                        <div class="input-wrapper">
-                            <i class="far fa-user input-icon"></i>
-                            <input type="text" id="usernameInput" placeholder="Enter your username" required>
-                        </div>
-                    </div>
-
-                    <div class="input-field">
-                        <label>Password</label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-lock input-icon"></i>
-                            <input type="password" id="passwordInput" placeholder="Enter your password" required>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn-signin">Sign In</button>
-                    
-                    <div class="form-footer-links">
-                        <a href="#" class="forgot-link">Forgot Password?</a>
-                    </div>
-                </form>
-
-                <div class="card-footer">
-                    <p>©University of Cebu. All rights reserved.</p>
-                </div>
+            <div class="confirm-modal-buttons">
+                <button class="btn-cancel-modal" onclick="closeForgotModal()">Cancel</button>
+                <button class="btn-confirm-logout" style="background: #94abeb;" onclick="sendResetLink()">Send Link</button>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
->>>>>>> 2e4bbd18f6441800bde2bc90aafeed9883c75c8c
-</html>
